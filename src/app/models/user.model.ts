@@ -1,6 +1,6 @@
 export class userModel{
-    public name: string = "";
-    public age: number = 0;
-    public email: string = "";
+    public name?: string;
+    public age?: number;
+    public email?: string;
     
 }

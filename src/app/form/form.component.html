@@ -42,7 +42,7 @@
                       </mat-form-field>
 
                 <div class="form-block">
-                 <button class="btn"
+                 <button class="btn "
                  mat-raised-button
                 [class.btn.disabled]="nameBind === ''"
                 [class.btn.disabled]="ageBind === null"
@@ -51,7 +51,14 @@
                  >
                  Save
                 </button>
+                <button (click)="Clear()">
+                </button>
                 <mat-error *ngIf="">Ошибка</mat-error>
                 </div>
         </form>
+</div>
+<div class="view">
+        {{ user.age }}<br>
+        {{ user.name }}<br>
+        {{ user.email }}<br>
 </div>
