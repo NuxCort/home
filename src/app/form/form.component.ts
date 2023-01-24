@@ -36,8 +36,12 @@ export class FormComponent extends userModel{
     this.user.name = this.nameBind;
     this.user.email = this.emailBind;
 
-    this.user.email = "";
+  }
 
+  public Clear(): void {
+    this.user.age = undefined;
+    this.user.name = "";
+    this.user.email = "";
   }
 } 
 
