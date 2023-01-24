@@ -2,13 +2,14 @@ import { Component, Input, Output } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import {ErrorStateMatcher} from '@angular/material/core';
 import { userModel } from '../models/user.model';
+import { Animations } from '../shared/animations';
 
 
 @Component({
   selector: 'app-form',
   templateUrl: './form.component.html',
   styleUrls: ['./form.component.scss'],
-  animations: []
+  animations: [Animations.fadeInOut]
 })
 
 export class FormComponent extends userModel{
@@ -38,11 +39,5 @@ export class FormComponent extends userModel{
     console.log(JSON.stringify(user))
   }
 }
-
-// let User = {
-//   name: "",
-//   age: 0,
-//   email: ""
-// }
 
 
