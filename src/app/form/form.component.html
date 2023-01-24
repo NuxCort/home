@@ -1,0 +1,57 @@
+<div class="container">
+        <form class="form1">
+
+                <mat-form-field class="form-block">
+                        <input matInput 
+                        placeholder="Имя" 
+                        minlength="4"
+                        maxlength="100"
+                        [formControl]="Name"
+                        [errorStateMatcher]="matcher"
+                        [(ngModel)]="nameBind"
+                        >
+                        <mat-error *ngIf="Name.hasError('required')">
+                                <label class="errorEnterEmail">Это обязательное поле</label>
+                        </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="form-block">
+                        <input matInput 
+                        placeholder="Возраст" 
+                        [formControl]="Age"
+                        [errorStateMatcher]="matcher"
+                        type="number"
+                        [(ngModel)]="ageBind">
+                        <mat-error *ngIf="Age.hasError('required')">
+                                <label class="errorEnterEmail">Это обязательное поле</label>
+                        </mat-error>
+                </mat-form-field>
+
+                <mat-form-field class="form-block">
+                        <input type="email" matInput
+                        placeholder="Ваша почта" 
+                        [formControl]="Email" 
+                        [errorStateMatcher]="matcher"
+                        [(ngModel)]="emailBind">
+                        <mat-error *ngIf="Email.hasError('email') && !Email.hasError('required')">
+                          <label class="errorEnterEmail">Пожалуйста введите правильный адрес</label>
+                        </mat-error>
+                        <mat-error *ngIf="Email.hasError('required')">
+                                <label class="errorEnterEmail">Это обязательное поле</label>
+                        </mat-error>
+                      </mat-form-field>
+
+                <div class="form-block">
+                 <button class="btn"
+                 mat-raised-button
+                [class.btn.disabled]="nameBind === ''"
+                [class.btn.disabled]="ageBind === null"
+                [class.btn.disabled]="emailBind === ''"
+                (click)="saveObject()"
+                 >
+                 Save
+                </button>
+                <mat-error *ngIf="">Ошибка</mat-error>
+                </div>
+        </form>
+</div>
