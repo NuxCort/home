@@ -19,6 +19,7 @@ export class FormComponent extends userModel{
   @Output() Name = new FormControl("", [Validators.required]);
   @Output() Age = new FormControl("", [Validators.required]);
   
+  public user = new userModel;
   
   public form!: FormGroup;
   public nameBind!: string;
@@ -30,14 +31,14 @@ export class FormComponent extends userModel{
   }
 
   public saveObject(): void {
-    let user = new userModel;
-    user.age = this.ageBind;
-    user.name = this.nameBind;
-    user.email = this.emailBind;
+    
+    this.user.age = this.ageBind;
+    this.user.name = this.nameBind;
+    this.user.email = this.emailBind;
 
-    console.log(user)
-    console.log(JSON.stringify(user))
+    this.user.email = "";
+
   }
-}
+} 
 
 
